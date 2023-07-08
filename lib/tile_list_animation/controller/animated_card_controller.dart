@@ -8,7 +8,13 @@ class AnimatedCardController extends State<AnimatedCardCustom> {
 
   bool onTap = false;
   bool onTapedDown = false;
-  
+
+  void changeOnTap(bool onTap) {
+    setState(() {
+      this.onTap = onTap;
+    });
+  }
+
   @override
   Widget build(BuildContext context) => widget.build(context, this);
 }
