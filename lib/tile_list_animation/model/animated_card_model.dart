@@ -8,5 +8,12 @@ class AnimatedCardModel {
   final String userProfileUrl;
   final bool isCurrentUser;
 
-  AnimatedCardModel(this.itemIndex, this.bgColor, this.scoreInCurrentDuration, this.userName, this.userProfileUrl, this.isCurrentUser);
+  AnimatedCardModel({
+    required this.itemIndex,
+    required this.scoreInCurrentDuration,
+    required this.userName,
+    required this.userProfileUrl,
+    this.bgColor = Colors.white,
+    this.isCurrentUser = false,
+  });
 }
