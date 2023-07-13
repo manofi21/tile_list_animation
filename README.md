@@ -1,16 +1,20 @@
-# animation_tile_list_practice
+# Card Animation from Sumit Panwar
+### Find He/Him in [His Linkid](https://www.linkedin.com/in/sumit-coder/) 
+This Project just practice of learing:
+1. Animation
+2. Clean architecture
+3. Dependencies Injection
+4. Http Request
 
-A new Flutter project.
+The animation from this project would be like this:
+![WhatsApp Video 2023-07-13 at 16 59 58 (1)](https://user-images.githubusercontent.com/54527045/253243321-ba55c25e-66a9-42f7-9c64-41cad97c547d.gif)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Animation
+The animation would be use from packages flutter_animate.
+```yaml
+    flutter_animate: ^4.2.0
+```
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Animasi akan diimplementasikan di satu widget tile list
+dan widget tersebut akan di taruh di `ListView.builder`.
