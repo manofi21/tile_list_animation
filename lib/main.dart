@@ -1,13 +1,13 @@
+import 'package:animation_tile_list_practice/locator.dart';
 import 'package:animation_tile_list_practice/repository/random_people_repository.dart';
 import 'package:flutter/material.dart';
 
 import 'entities/random_user.dart';
-import 'remote_data_source/random_people_remote_data_source.dart';
-import 'model/random_user_model.dart';
 import 'tile_list_animation/model/animated_card_model.dart';
 import 'tile_list_animation/tile_list_widget.dart';
 
 void main() {
+  setup();
   runApp(const MyApp());
 }
 
@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void didChangeDependencies() {
-    listUserRandom = RandomPeopleRepository(RandomPeopleRemoteDataSourceImpl()).getListUserRandom();
+    listUserRandom = getIt<RandomPeopleRepository>().getListUserRandom();
     super.didChangeDependencies();
   }
 
@@ -64,27 +64,27 @@ class _MyHomePageState extends State<MyHomePage> {
           }
 
           if (snapshot.hasData) {
-          final result = snapshot.data ?? [];
-          return ListView.builder(
-            padding: const EdgeInsets.only(bottom: 16, top: 1),
-            cacheExtent: 1,
-            itemCount: result.length,
-            physics: const BouncingScrollPhysics(),
-            itemBuilder: (context, index) {
-              return AnimatedCardCustom(
-                animatedCardModel: AnimatedCardModel(
-                  itemIndex: index,
-                  userName: result[index].fullName,
-                  scoreInCurrentDuration: ((50 - index) * 19).toString(),
-                  userProfileUrl: result[index].urlImage,
-                ),
-              );
-            },
-          );            
+            final result = snapshot.data ?? [];
+            return ListView.builder(
+              padding: const EdgeInsets.only(bottom: 16, top: 1),
+              cacheExtent: 1,
+              itemCount: result.length,
+              physics: const BouncingScrollPhysics(),
+              itemBuilder: (context, index) {
+                return AnimatedCardCustom(
+                  animatedCardModel: AnimatedCardModel(
+                    itemIndex: index,
+                    userName: result[index].fullName,
+                    scoreInCurrentDuration: ((50 - index) * 19).toString(),
+                    userProfileUrl: result[index].urlImage,
+                  ),
+                );
+              },
+            );
           }
 
           return const Center(child: Text("Not Data Found"));
-        }
+        },
       ),
     );
   }

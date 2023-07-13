@@ -2,7 +2,7 @@ import '../entities/random_user.dart';
 import '../remote_data_source/random_people_remote_data_source.dart';
 
 class RandomPeopleRepository {
-  final RandomPeopleRemoteDataSourceImpl randomPeopleApiImpl;
+  final RandomPeopleRemoteDataSource randomPeopleApiImpl;
   RandomPeopleRepository(this.randomPeopleApiImpl);
 
   Future<List<RandomPeopleEntites>> getListUserRandom() async {

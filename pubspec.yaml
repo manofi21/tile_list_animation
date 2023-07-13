@@ -39,6 +39,7 @@ dependencies:
   figma_squircle: ^0.5.3
   flutter_animate: ^4.2.0
   http: any
+  get_it: ^7.6.0
 
 dev_dependencies:
   flutter_test:
