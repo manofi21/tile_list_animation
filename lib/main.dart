@@ -1,7 +1,9 @@
+import 'package:animation_tile_list_practice/repository/random_people_repository.dart';
 import 'package:flutter/material.dart';
 
-import 'http/get_data_request.dart';
-import 'http/random_user.dart';
+import 'entities/random_user.dart';
+import 'remote_data_source/random_people_remote_data_source.dart';
+import 'model/random_user_model.dart';
 import 'tile_list_animation/model/animated_card_model.dart';
 import 'tile_list_animation/tile_list_widget.dart';
 
@@ -34,14 +36,22 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  late Future<List<RandomPeopleEntites>> listUserRandom;
+
+  @override
+  void didChangeDependencies() {
+    listUserRandom = RandomPeopleRepository(RandomPeopleRemoteDataSourceImpl()).getListUserRandom();
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: FutureBuilder<List<ResultRandomPeople>>(
-        future: getListRandom(),
+      body: FutureBuilder<List<RandomPeopleEntites>>(
+        future: listUserRandom,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
@@ -64,9 +74,9 @@ class _MyHomePageState extends State<MyHomePage> {
               return AnimatedCardCustom(
                 animatedCardModel: AnimatedCardModel(
                   itemIndex: index,
-                  userName: result[index].name.toString(),
+                  userName: result[index].fullName,
                   scoreInCurrentDuration: ((50 - index) * 19).toString(),
-                  userProfileUrl: result[index].picture.medium,
+                  userProfileUrl: result[index].urlImage,
                 ),
               );
             },

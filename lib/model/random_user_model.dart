@@ -131,11 +131,6 @@ class Name {
         "first": first,
         "last": last,
     };
-
-    @override
-    String toString() {
-      return "$title.$first $last";
-    }
 }
 
 class Picture {
