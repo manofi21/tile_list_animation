@@ -38,6 +38,7 @@ dependencies:
   # smooth_corner: ^1.1.0
   figma_squircle: ^0.5.3
   flutter_animate: ^4.2.0
+  http: any
 
 dev_dependencies:
   flutter_test:
