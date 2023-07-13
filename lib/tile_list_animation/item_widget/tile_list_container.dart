@@ -15,12 +15,11 @@ class TileListContainer extends StatelessWidget {
 
     return Container(
       margin: const EdgeInsets.only(bottom: 12, left: 12, right: 12),
-      height: 80,
+      height: 60,
       width: 400,
       clipBehavior: Clip.hardEdge,
       padding: const EdgeInsets.only(left: 12, right: 16, top: 0),
       decoration: ShapeDecoration(
-        // shadows: ,
         color: themeData.colorScheme.secondary,
         shape: SmoothRectangleBorder(
           borderRadius: SmoothBorderRadius(
