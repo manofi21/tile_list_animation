@@ -69,7 +69,7 @@ class AnimatedCardCustom extends StatefulWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(width: 150),
+                  const SizedBox(width: 20),
                   Expanded(
                     child: Text(
                       animatedCardModel.userName,
@@ -85,7 +85,7 @@ class AnimatedCardCustom extends StatefulWidget {
             Text(
               animatedCardModel.scoreInCurrentDuration,
               style: themeData.textTheme.titleMedium!
-                  .copyWith(color: Colors.green[600]),
+                  .copyWith(color: Colors.white),
             )
                 .animate(delay: 150.ms)
                 .moveX(begin: 100)
