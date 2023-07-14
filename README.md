@@ -4,7 +4,7 @@ This Project just practice of learing:
 1. Animation
 2. Clean architecture
 3. Dependencies Injection
-4. Http Request
+4. Http Request (Menggunakan API dari (Random User)[https://randomuser.me/documentation#multiple])
 
 The animation from this project would be like this:
 ![WhatsApp Video 2023-07-13 at 16 59 58 (1)](https://user-images.githubusercontent.com/54527045/253243321-ba55c25e-66a9-42f7-9c64-41cad97c547d.gif)
